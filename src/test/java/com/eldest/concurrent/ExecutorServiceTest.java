@@ -4,6 +4,8 @@ import org.junit.Test;
 
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
+import java.util.concurrent.ScheduledExecutorService;
+import java.util.concurrent.TimeUnit;
 
 /**
  * Created with IntelliJ IDEA for ConcurrentTests.
@@ -43,6 +45,24 @@ public class ExecutorServiceTest {
 
         for (int i = 0; i < 10; i++) {
             executorService.execute(new LocalThread("Thread-" + i));
+        }
+
+        executorService.shutdown();
+
+        while (!executorService.isTerminated()) {
+            System.out.print(".");
+            Thread.sleep(ONE_SEC);
+        }
+    }
+
+    @Test
+    public void testScheduledThreadPool() throws Throwable {
+        System.out.println();
+
+        ScheduledExecutorService executorService = Executors.newScheduledThreadPool(3);
+
+        for (int i = 0; i < 10; i++) {
+            executorService.schedule(new LocalThread("Thread-" + i), 5, TimeUnit.SECONDS);
         }
 
         executorService.shutdown();
