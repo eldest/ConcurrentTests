@@ -1,4 +1,4 @@
-package com.eldest.old.annotations;
+package com.eldest.old.annotation;
 
 import java.lang.annotation.Documented;
 

@@ -13,7 +13,7 @@
  * $Id$
  * 
  */
-package com.eldest.old.annotations.time;
+package com.eldest.apt.time;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;

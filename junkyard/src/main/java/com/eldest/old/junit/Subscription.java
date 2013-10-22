@@ -1,6 +1,6 @@
 package com.eldest.old.junit;
 
-import com.eldest.old.annotations.ClassPreamble;
+import com.eldest.old.annotation.ClassPreamble;
 
 @ClassPreamble(author = "Eldest", date = "21.01.09", reviewers = { "me" })
 public class Subscription {

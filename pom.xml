@@ -4,12 +4,19 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.eldest</groupId>
-    <artifactId>some-tests</artifactId>
+    <artifactId>test-site</artifactId>
     <version>1.0-SNAPSHOT</version>
-    <packaging>jar</packaging>
+    <packaging>pom</packaging>
+
+    <modules>
+        <module>junkyard</module>
+        <module>apt</module>
+        <module>test</module>
+    </modules>
 
     <properties>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <jdk.version>1.6</jdk.version>
+        <project.encoding>UTF-8</project.encoding>
         <spring.version>3.0.7.RELEASE</spring.version>
     </properties>
 
@@ -120,6 +127,21 @@
         </dependency>
 
     </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.0</version>
+                <configuration>
+                    <encoding>${project.encoding}</encoding>
+                    <source>${jdk.version}</source>
+                    <target>${jdk.version}</target>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 
     <profiles>
         <profile>

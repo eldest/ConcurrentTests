@@ -13,7 +13,7 @@
  * $Id$
  * 
  */
-package com.eldest.old.annotations.time;
+package com.eldest.apt.time;
 
 import com.sun.tools.javac.code.Flags;
 import com.sun.tools.javac.code.TypeTags;

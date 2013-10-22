@@ -32,26 +32,11 @@ package com.eldest.old.swing;
  */ 
 
 
-import java.awt.BasicStroke;
-import java.awt.Color;
-import java.awt.Dimension;
-import java.awt.Font;
-import java.awt.FontMetrics;
-import java.awt.GradientPaint;
-import java.awt.Graphics;
-import java.awt.Graphics2D;
-import java.awt.RenderingHints;
+import javax.swing.*;
+import java.awt.*;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
-import java.awt.geom.Arc2D;
-import java.awt.geom.Ellipse2D;
-import java.awt.geom.GeneralPath;
-import java.awt.geom.Line2D;
-import java.awt.geom.Rectangle2D;
-import java.awt.geom.RoundRectangle2D;
-
-import javax.swing.JApplet;
-import javax.swing.JFrame;
+import java.awt.geom.*;
 
 /* 
  * This is like the FontDemo applet in volume 1, except that it 

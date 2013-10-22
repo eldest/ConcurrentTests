@@ -1,4 +1,4 @@
-package com.eldest.old.annotations;
+package com.eldest.old.annotation;
 
 
 // http://java.sun.com/docs/books/tutorial/java/javaOO/annotations.html
