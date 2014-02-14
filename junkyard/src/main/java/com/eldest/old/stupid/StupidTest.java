@@ -88,4 +88,12 @@ public class StupidTest {
 	private void doSomethingElse(long var) {
 		log.debug("var: %s", var);
 	}
+
+    @Test
+    public void formaterTest() {
+        String s = "test";
+        int i = 7;
+
+        log.debug("|" + String.format("%1$#" + i + "s", s) + "|");
+    }
 }

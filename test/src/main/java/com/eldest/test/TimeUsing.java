@@ -1,6 +1,6 @@
 package com.eldest.test;
 
-import com.eldest.apt.time.Time;
+import com.eldest.annotations.Time;
 
 /**
  * Created with IntelliJ IDEA for SomeTests.
@@ -18,7 +18,7 @@ public class TimeUsing {
         try {
             Thread.sleep(1000);
         } catch (InterruptedException e) {
-            e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+            e.printStackTrace();
         }
     }
 }

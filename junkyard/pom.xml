@@ -13,5 +13,24 @@
     <artifactId>junkyard</artifactId>
     <packaging>jar</packaging>
 
-    
+    <properties>
+        <jdk.version>1.7</jdk.version>
+        <project.encoding>windows-1251</project.encoding>
+    </properties>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.0</version>
+                <configuration>
+                    <encoding>${project.encoding}</encoding>
+                    <source>${jdk.version}</source>
+                    <target>${jdk.version}</target>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
 </project>

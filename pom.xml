@@ -63,7 +63,7 @@
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-aop</artifactId>
-            <version>${spring.version}</version>
+            <version>3.2.4.RELEASE</version>
         </dependency>
         <dependency>
             <groupId>org.springframework</groupId>
@@ -135,7 +135,9 @@
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>3.0</version>
                 <configuration>
+                    <verbose>true</verbose>
                     <encoding>${project.encoding}</encoding>
+                    <compilerVersion>${jdk.version}</compilerVersion>
                     <source>${jdk.version}</source>
                     <target>${jdk.version}</target>
                 </configuration>

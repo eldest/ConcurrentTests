@@ -1,5 +1,6 @@
 package com.eldest.apt.time;
 
+import com.eldest.annotations.Time;
 import org.junit.Test;
 
 /**

@@ -13,8 +13,9 @@
  * $Id$
  * 
  */
-package com.eldest.apt.time;
+package com.eldest.annotations.processors;
 
+import com.eldest.annotations.Time;
 import com.sun.tools.javac.code.Flags;
 import com.sun.tools.javac.code.TypeTags;
 import com.sun.tools.javac.model.JavacElements;
@@ -35,11 +36,11 @@ import java.util.Set;
  * @author EremenkoAA
  *
  */
-@SupportedAnnotationTypes(value = { TimeAnnotationProcessor.ANNOTATION_TYPE })
+@SupportedAnnotationTypes({ TimeAnnotationProcessor.ANNOTATION_TYPE })
 @SupportedSourceVersion(SourceVersion.RELEASE_6)
 public class TimeAnnotationProcessor extends AbstractProcessor {
 
-	public static final String ANNOTATION_TYPE = "annotations.time.Time";
+	public static final String ANNOTATION_TYPE = "com.eldest.annotations.Time";
 	private JavacProcessingEnvironment javacProcessingEnv;
 	private TreeMaker maker;
 

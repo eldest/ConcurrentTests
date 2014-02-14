@@ -17,17 +17,17 @@
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-jar-plugin</artifactId>
-                <version>2.4</version>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.0</version>
                 <configuration>
-                    <archive>
-                        <manifest>
-                            <addDefaultImplementationEntries>true</addDefaultImplementationEntries>
-                        </manifest>
-                        <manifestEntries>
-                            <Class-Path>${basedir}/META-INF/services/**</Class-Path>
-                        </manifestEntries>
-                    </archive>
+                    <verbose>true</verbose>
+                    <!--<fork>true</fork>-->
+                    <!--<executable>${env.JAVA_HOME}/bin/java</executable>-->
+                    <encoding>${project.encoding}</encoding>
+                    <compilerVersion>${jdk.version}</compilerVersion>
+                    <source>${jdk.version}</source>
+                    <target>${jdk.version}</target>
+                    <compilerArgument>-proc:none</compilerArgument>
                 </configuration>
             </plugin>
         </plugins>
