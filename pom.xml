@@ -10,12 +10,11 @@
 
     <modules>
         <module>junkyard</module>
-        <module>apt</module>
-        <module>test</module>
+        <module>stackoverflow</module>
     </modules>
 
     <properties>
-        <jdk.version>1.6</jdk.version>
+        <jdk.version>1.7</jdk.version>
         <project.encoding>UTF-8</project.encoding>
         <spring.version>3.0.7.RELEASE</spring.version>
     </properties>
