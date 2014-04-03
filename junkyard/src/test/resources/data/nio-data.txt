@@ -1,0 +1,29 @@
+// test connection
+http://stackoverflow.com/questions/9181637/how-to-fill-proxy-information-in-cntlm-config-file
+cntlm -v -I -M http://google.com
+
+
+// configuration
+http://www.linux-answered.com/2012/05/23/linux-windows-ntlm-authentication-proxy/
+
+Username	yourName
+Domain		rntc.ru
+Password	yourPassword
+
+or
+
+Auth		NTLMv2
+PassNTLMv2  someHash	- to generate hash, run: cntlm -v -H
+
+Proxy		vm-uran:8080
+NoProxy		localhost, 127.0.0.*, 10.*, 192.168.*, vmsource
+Listen		3128
+
+
+// Tunneling
+
+//in cntlm.conf
+Tunnel		443:23.23.183.180:443					ip of my.jrebel.com
+
+//in C:\Windows\System32\drivers\etc\hosts
+127.0.0.1		my.jrebel.com

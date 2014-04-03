@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>       <!-- http://logging.apache.org/log4j/2.x/manual -->
+<Configuration status="error" strict="true" monitorInterval="30" packages="com.lukoil.wellinfo.log">
+
+    <Appenders>
+
+        <Console name="SYS_OUT" target="SYSTEM_OUT">
+            <PatternLayout pattern="%d %-5p [%c] %m%n"/>
+            <ThresholdFilter level="ERROR" onMatch="DENY" onMismatch="ACCEPT"/>
+        </Console>
+
+        <Console name="SYS_ERR" target="SYSTEM_ERR">
+            <PatternLayout pattern="%d %-5p [%c] %m%n"/>
+            <ThresholdFilter level="ERROR" onMatch="ACCEPT" onMismatch="DENY"/>
+        </Console>
+
+        <RollingFile name="FILE" fileName="${log4j.root}/logs/log4j.log"
+                     filePattern="${log4j.root}/logs/$${date:yyyy-MM}/app-%d{dd-MM-yyyy}-%i.log.gz">
+            <PatternLayout>
+                <Charset>UTF-8</Charset>
+                <Pattern>"%d %-5p [%c] %m%n</Pattern>
+            </PatternLayout>
+            <Policies>
+                <TimeBasedTriggeringPolicy/>
+                <SizeBasedTriggeringPolicy size="100 MB"/>
+            </Policies>
+        </RollingFile>
+
+    </Appenders>
+
+    <Loggers>
+
+        <Logger name="org.springframework" level="info"/>
+        <Logger name="org.hibernate" level="info"/>
+        <Logger name="com.mysema" level="info"/>
+        <Logger name="org.reflections" level="info"/>
+        <Logger name="org.jooq" level="info"/>
+
+        <Root level="debug">
+            <AppenderRef ref="SYS_OUT"/>
+            <AppenderRef ref="SYS_ERR"/>
+            <AppenderRef ref="FILE"/>
+        </Root>
+
+    </Loggers>
+
+</Configuration>

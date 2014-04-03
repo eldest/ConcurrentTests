@@ -17,6 +17,8 @@
         <jdk.version>1.7</jdk.version>
         <project.encoding>UTF-8</project.encoding>
         <spring.version>3.0.7.RELEASE</spring.version>
+        <log4j.version>2.0-beta9</log4j.version>
+        <log4j.root>${project.basedir}</log4j.root>
     </properties>
 
     <dependencies>
@@ -34,9 +36,24 @@
         </dependency>
 
         <dependency>
-            <groupId>log4j</groupId>
-            <artifactId>log4j</artifactId>
-            <version>1.2.17</version>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-slf4j-impl</artifactId>
+            <version>${log4j.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-api</artifactId>
+            <version>${log4j.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-core</artifactId>
+            <version>${log4j.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-1.2-api</artifactId>
+            <version>${log4j.version}</version>
         </dependency>
 
         <dependency>
@@ -123,6 +140,12 @@
             <version>1.6</version>
             <scope>system</scope>
             <systemPath>${tools-jar}</systemPath>
+        </dependency>
+
+        <dependency>
+            <groupId>javazoom</groupId>
+            <artifactId>jlayer</artifactId>
+            <version>1.0.1</version>
         </dependency>
 
     </dependencies>

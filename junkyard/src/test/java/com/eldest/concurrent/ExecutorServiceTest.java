@@ -2,10 +2,7 @@ package com.eldest.concurrent;
 
 import org.junit.Test;
 
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
-import java.util.concurrent.ScheduledExecutorService;
-import java.util.concurrent.TimeUnit;
+import java.util.concurrent.*;
 
 /**
  * Created with IntelliJ IDEA for ConcurrentTests.
@@ -71,6 +68,19 @@ public class ExecutorServiceTest {
             System.out.print(".");
             Thread.sleep(ONE_SEC);
         }
+    }
+
+    @Test
+    public void testSingleThread() throws Exception {
+        ExecutorService executorService = Executors.newSingleThreadExecutor();
+        Future<?> control = executorService.submit(new LocalThread("SingleThread"));
+        try {
+            control.get(9, TimeUnit.SECONDS);
+        } catch (TimeoutException e) {
+            System.out.println("It takes too much time, let's interrupt it");
+            control.cancel(true);
+        }
+
     }
 
     private static class LocalThread extends Thread {
